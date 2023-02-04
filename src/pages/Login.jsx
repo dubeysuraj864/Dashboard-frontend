@@ -11,7 +11,7 @@ function Login() {
 
   const loginData = async (e) => {
     e.preventDefault();
-    let result = await fetch("http://localhost:5000/login", {
+    let result = await fetch("http://localhost:5000/login",{
       method: "post",
       body: JSON.stringify({ email, password }),
       headers: {
@@ -20,8 +20,9 @@ function Login() {
     });
     result = await result.json();
     console.warn(result);
-    if (result.name) {
-      localStorage.setItem("user", JSON.stringify(result));
+    if (result.auth) {
+      localStorage.setItem("user", JSON.stringify(result.user));
+      localStorage.setItem("token", JSON.stringify(result.auth));
       navigate("/");
     } else {
       alert("Please enter correct details...");
