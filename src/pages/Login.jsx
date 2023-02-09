@@ -34,7 +34,7 @@ function Login() {
       navigate("/");
     } else {
     }
-  }, []);
+  }, [navigate]);
   return (
     <>
       <div className="login text-center">

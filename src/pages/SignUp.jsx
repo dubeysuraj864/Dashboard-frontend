@@ -31,7 +31,7 @@ useEffect(()=>{
   if(auth){
     navigate("/")
   }
-},[])
+},[navigate])
   return (
     <>
       <div className="SignUp text-center">
